@@ -82,3 +82,5 @@ function fightBeast() {}
 
 // initialize buttons
 button1.onclick = goStore();
+button1.onclick = goStore();
+button1.onclick = goStore();
