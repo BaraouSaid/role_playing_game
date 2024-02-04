@@ -155,7 +155,9 @@ function sellWeapon() {
   }
 }
 
-function goFight() {}
+function goFight() {
+  update(locations[3]);
+}
 
 function fightSlime() {
   fighting = 0;
