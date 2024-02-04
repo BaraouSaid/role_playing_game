@@ -76,7 +76,18 @@ const locations = [
     'button functions': [fightSlime, fightBeast, goTown],
     text: 'You enter the cave. You see some monsters.',
   },
+  {
+    name: 'fight',
+    'button text': ['Attack', 'Dodge', 'Run'],
+    'button functions': [attack, dodge, goTown],
+    text: 'You are fighting a monster.',
+  },
 ];
+
+// initialize buttons
+button1.onclick = goStore();
+button2.onclick = goCave();
+button3.onclick = fightDragon();
 
 function update(location) {
   button1.innerText = location['button text'][0];
@@ -98,10 +109,6 @@ function goStore() {
 
 function goCave() {
   update(locations[2]);
-}
-
-function fightDragon() {
-  console.log('Fighting dragon.');
 }
 
 function buyHealth() {
@@ -148,11 +155,23 @@ function sellWeapon() {
   }
 }
 
-function fightSlime() {}
+function goFight() {}
 
-function fightBeast() {}
+function fightSlime() {
+  fighting = 0;
+  goFight();
+}
 
-// initialize buttons
-button1.onclick = goStore();
-button2.onclick = goCave();
-button3.onclick = fightDragon();
+function fightBeast() {
+  fighting = 1;
+  goFight();
+}
+
+function fightDragon() {
+  fighting = 2;
+  goFight();
+}
+
+function attack() {}
+
+function dodge() {}
