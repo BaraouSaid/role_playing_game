@@ -205,9 +205,13 @@ function attack() {
   text.innerText = `The ${monsters[fighting].name} attacks.`;
   text.innerText += ` You attack it with your ${weapons[currentWeapon].name}.`;
   health -= getMonsterAttackValue(monsters[fighting].level);
-  //Substract from monsterHealth the power of current weapon + xp value
-  monsterHealth -=
-    weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+  if (isMonsterHit()) {
+    //Substract from monsterHealth the power of current weapon + xp value
+    monsterHealth -=
+      weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
+  } else {
+    text.innerText += ' You miss.';
+  }
   healthText.innerText = health;
   monsterHealthText.innerText = monsterHealth;
   if (health <= 0) {
