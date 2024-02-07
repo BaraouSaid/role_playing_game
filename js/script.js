@@ -274,4 +274,4 @@ function easterEgg() {
   update(locations[7]);
 }
 
-function pick(guess) {}
+function guess(pick) {}
